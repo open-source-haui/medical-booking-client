@@ -1,8 +1,18 @@
-# React + Vite
+# medical-booking
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Website đặt lịch khám viết bằng ReactJS + NodeJS
 
-Currently, two official plugins are available:
+# Hướng dẫn
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Clone project về máy  
+  `git clone https://github.com/open-source-haui/medical-booking-fe-react.git`
+- Checkout sang nhánh **_dev_**  
+  `git checkout dev`
+- Từ nhánh **_dev_** checkout sang nhánh của mình  
+  `git checkout -b <your_branch_name>`
+- Install package  
+  `npm install` hoặc `npm i`
+- Khởi chạy dự án  
+  `npm run dev`
+- Sau khi hoàn thành task push lên nhánh của mình **(Không push lên nhánh _main_ hoặc _dev_)**  
+  `git push origin <your_branch_name>`
