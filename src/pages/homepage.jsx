@@ -4,16 +4,16 @@ import FooterClient from '../layouts/client/footer';
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <HeaderClient />
-      <div className="flex w-screen h-screen flex-col justify-center gap-1 items-center">
+      <div className="flex flex-col justify-center gap-1 items-center">
         <h1 className="text-green-500 font-bold">Medical booking</h1>
-        <Button className="bg-[#1677ff]" type="primary">
+        <Button type="primary" size="large">
           Primary Button
         </Button>
       </div>
       <FooterClient />
-    </div>
+    </>
   );
 };
 
