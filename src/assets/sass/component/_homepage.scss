@@ -1,0 +1,144 @@
+// banner
+section {
+  padding: 0 16%;
+}
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner > div {
+  padding-top: 5rem;
+}
+
+.banner-left {
+  max-width: 38%;
+}
+
+.banner-left h1 {
+  font-weight: 600 !important;
+}
+
+.banner-left:first-child {
+  color: rgb(11 48 82);
+}
+.h1-blue {
+  color: rgb(6 173 239);
+}
+
+.banner-left .button {
+  display: flex;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  .btn-register {
+    padding: 0.6rem 1.5rem;
+    background-color: red;
+    border-radius: 30px;
+  }
+  .btn-booking {
+    padding: 0.6rem 2.5rem;
+    margin-left: 30px;
+    background-color: #173a5b;
+    border-radius: 40px;
+  }
+}
+
+.banner-left h2 span {
+  color: red;
+}
+
+// utillies
+.card_container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding-left: 3%;
+  padding-right: 3%;
+  grid-gap: 2%;
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+.card_item {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #f7f6f6;
+  box-shadow: 5px 5px 2px rgb(238, 238, 238);
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px 0 rgba(38, 50, 70, 0.07);
+}
+.card_item i {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+.card_item-content {
+  width: 150px;
+  height: 95px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+//  quoted
+.quoted {
+  display: flex;
+}
+section.title {
+  color: rgb(253, 181, 48);
+  font-size: 2.1rem;
+}
+.quoted-left {
+  width: 420px;
+  height: 500px;
+  box-shadow: 0 0 15px 0 rgba(38, 50, 70, 0.07);
+  border-radius: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quoted-left-content {
+  width: 380px;
+  height: 460px;
+  text-align: center;
+  padding: 20px 20px;
+  h2 {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  p {
+    font-weight: 500;
+    color: #989898;
+  }
+}
+.quoted-img {
+  border-radius: 20px;
+  height: 85%;
+}
+
+.quoted-img img {
+  border-radius: 20px;
+}
+
+.quoted-right {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quoted-right h2 {
+  font-size: 18px;
+}
+.great-support-right {
+  .connection-docter-img {
+  }
+}
