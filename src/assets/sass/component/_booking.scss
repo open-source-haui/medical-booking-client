@@ -1,11 +1,112 @@
-#banner {
-  background-color: rgb(25 117 220);
+section {
+  padding: 0 11%;
+}
+.booking-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 0.7;
+}
+
+.booking-des {
+  color: #1f2937;
+  font-size: 14px;
+}
+
+#booking__banner {
+  width: 100%;
+  height: 500px;
+  background-color: #1975dc;
+
   position: relative;
-  height: 700px;
+  top: 77px;
+  margin-bottom: 100px;
+  .banner__image {
+    position: absolute;
+    right: 0;
+    width: 670px;
+    height: 520px;
+    bottom: 0;
+    z-index: 8;
+  }
   .banner__content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    h1 {
+      font-size: 36px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 18px;
+      line-height: 0.5;
+      margin-top: 8px;
+    }
   }
+}
+
+.banner__search {
+  width: 880px;
+  height: 46px;
+  display: flex;
+  margin-top: 27px;
+  position: relative;
+
+  input {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+  }
+
+  input::placeholder {
+    padding-left: 15px;
+  }
+
+  i {
+    position: absolute;
+    right: 15px;
+    bottom: 50%;
+    transform: translateY(50%);
+    color: #ccc;
+    font-size: 20px;
+  }
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.booking__doctor {
+  margin-top: 130px;
+  .doctor__container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 18px;
+    padding: 0 4%;
+    margin-top: 30px;
+  }
+}
+
+.booking__question {
+  width: 800px;
+  text-align: center;
+  margin: 100px 30rem 150px 25rem;
+  .booking__question-title {
+    color: #1f2937;
+    margin-bottom: 40px;
+  }
+}
+
+.accordion-content {
+  color: #434e61;
+  text-align: start !important;
 }

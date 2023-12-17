@@ -1,0 +1,41 @@
+#profile {
+  width: 100%;
+  background-color: rgb(241 245 249);
+  padding-top: 60px;
+}
+
+.profile__container_update {
+  background-color: #fff;
+  width: 900px;
+  margin: 5rem auto 3rem;
+  padding: 1.8rem 1.2rem 3.5rem;
+  border-radius: 15px;
+
+  span {
+    color: red;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 29px;
+    font-weight: 600;
+    margin-bottom: 26px;
+  }
+}
+
+.profile-btn {
+  float: right;
+  margin-left: 15px;
+}
+
+.cancel {
+  background-color: #fff !important;
+  border: 1px solid #ccc !important;
+  color: #4c4c4c !important;
+}
+
+.avatar-img {
+  width: 100px;
+  height: 100px;
+  display: block;
+}

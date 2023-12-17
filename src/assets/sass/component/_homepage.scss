@@ -2,12 +2,13 @@
 section {
   padding: 0 16%;
 }
-.banner {
+.home__banner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 55px;
 }
-.banner > div {
+.home__banner > div {
   padding-top: 5rem;
 }
 
@@ -31,12 +32,19 @@ section {
   color: #fff;
   font-size: 18px;
   font-weight: 600;
-  padding-top: 30px;
-  padding-bottom: 15px;
+  margin-top: 30px;
+  margin-bottom: 15px;
   .btn-register {
-    padding: 0.6rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 1.5rem;
+    // width: 100px;
+    // height: 50px;
     background-color: red;
     border-radius: 30px;
+    margin-bottom: 50px;
   }
   .btn-booking {
     padding: 0.6rem 2.5rem;
@@ -68,11 +76,16 @@ section {
   border-radius: 10px;
   border: 1px solid #f7f6f6;
   box-shadow: 5px 5px 2px rgb(238, 238, 238);
-  height: 140px;
+  height: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 15px 0 rgba(38, 50, 70, 0.07);
+  color: #0b3052;
+}
+
+.card_item:hover {
+  background-color: #d8f4ff;
 }
 .card_item i {
   margin-bottom: 20px;

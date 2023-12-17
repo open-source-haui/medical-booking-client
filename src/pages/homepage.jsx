@@ -1,3 +1,9 @@
+import {
+  ArrowPathIcon,
+  CloudArrowUpIcon,
+  LockClosedIcon,
+} from '@heroicons/react/24/outline';
+
 import HeaderClient from '../layouts/client/Header';
 import FooterClient from '../layouts/client/Footer';
 import ArrowUp from '../components/ArrowUp';
@@ -8,12 +14,39 @@ import connectionDocter from '../assets/images/connection-doctor.webp';
 
 import '../assets/sass/component/_homepage.scss';
 
+const features = [
+  {
+    name: 'Đội ngũ bác sĩ',
+    description:
+      'Tất cả các bác sĩ đều có liên kết chính thức với Medical Booking để bảo đảm lịch đặt khám của bạn được xác nhận.',
+    icon: CloudArrowUpIcon,
+  },
+  {
+    name: 'Đặt khám dễ dàng, nhanh chóng, chủ động',
+    description:
+      'Chỉ với 1 phút, bạn có thể đặt khám thành công với bác sĩ. Phiếu khám bao gồm số thứ tự và khung thời gian dự kiến.',
+    icon: ArrowPathIcon,
+  },
+  {
+    name: 'Bảo mật thông tin',
+    description:
+      'Tuân theo đạo luật HIPAA và ứng dụng công nghệ cao, chúng tôi cam kết bảo mật toàn bộ thông tin cuộc tư vấn của bạn với bác sĩ.',
+    icon: LockClosedIcon,
+  },
+  {
+    name: 'Tiện lợi và Tiết kiệm',
+    description:
+      'Không tốn công di chuyển, không cần chờ khám. Kết nối với các bác sĩ đầu ngành chỉ với chiếc điện thoại của bạn.',
+    icon: ArrowPathIcon,
+  },
+];
+
 function HomePage() {
   return (
     <>
       <HeaderClient />
 
-      <section className="banner">
+      <section className="home__banner">
         <div className="banner-left">
           <h1>Hệ thống đặt lịch khám trực tuyến</h1>
           <h1>Phòng khám</h1>
@@ -119,6 +152,38 @@ function HomePage() {
         </div>
       </section>
 
+      <div className="bg-white py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:text-center">
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              An tâm tìm và đặt bác sĩ
+            </p>
+            <p className=" text-lg leading-8 text-gray-600">
+              Hơn 500 bác sĩ liên kết chính thức với Medical
+            </p>
+          </div>
+          <div className="mx-auto mt-6 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+              {features.map((feature) => (
+                <div key={feature.name} className="relative pl-16">
+                  <dt className="text-base font-semibold leading-7 text-gray-900">
+                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                      <feature.icon
+                        className="h-6 w-6 text-white"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    {feature.name}
+                  </dt>
+                  <dd className="mt-2 text-base leading-7 text-gray-600">
+                    {feature.description}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      </div>
       <ArrowUp />
 
       <FooterClient />

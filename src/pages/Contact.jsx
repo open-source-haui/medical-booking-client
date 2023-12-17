@@ -18,7 +18,7 @@ const Contact = () => {
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Họ và tên</Form.Label>
-              <Form.Control type="tẽxt" placeholder="Trịnh Thu Hà" />
+              <Form.Control type="text" placeholder="Trịnh Thu Hà" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Số điện thoại</Form.Label>
@@ -35,7 +35,7 @@ const Contact = () => {
               <Form.Label>Nội dung tin nhắn</Form.Label>
               <Form.Control as="textarea" rows={7} />
             </Form.Group>
-            <Button variant="primary" type="submit" className='button'>
+            <Button variant="primary" type="submit" className="button">
               Gửi tin nhắn
             </Button>
           </Form>

@@ -40,7 +40,9 @@ const HeaderClient = () => {
                 <NavDropdown.Item href="#action/3.1">
                   Tài khoản
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Hồ sơ</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Cập nhật hồ sơ
+                </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">
                   Đăng xuất
                 </NavDropdown.Item>

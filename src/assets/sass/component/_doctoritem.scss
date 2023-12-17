@@ -1,0 +1,62 @@
+.doctor__item {
+  border-radius: 10px;
+  border: 1px solid #e7e7e7;
+  height: 260px;
+  cursor: pointer;
+  hr {
+    margin-top: -40px;
+    height: 1px;
+    line-height: 0;
+  }
+
+  .booking__enter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -10px;
+    padding: 0 14px;
+    font-weight: 600;
+  }
+}
+.doctor__item-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .doctor__item-image {
+    width: 100px;
+    height: 100px;
+    margin-top: -38px;
+    img {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 13px;
+  }
+  p {
+    font-size: 13px;
+    line-height: 0.2;
+    font-weight: 600;
+    color: #989898;
+  }
+}
+
+.doctor__item:hover {
+  box-shadow: 1px 5px 6px #d7d7d7;
+  .booking__enter {
+    color: #1975dc;
+  }
+  .doctor__item-name {
+    color: #1975dc;
+    text-decoration: underline;
+  }
+}
