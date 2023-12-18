@@ -8,6 +8,7 @@ import DoctorDetail from './pages/DoctorDetail';
 import Appointment from './pages/Appointment';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import ForgotPassword from './pages/ForgotPassword';
 
 import './assets/sass/base.scss';
 
@@ -20,6 +21,7 @@ function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/appointment" element={<Appointment />} />
       <Route path="/doctor" element={<DoctorDetail />} />
     </Routes>

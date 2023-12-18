@@ -19,21 +19,28 @@ const Login = () => {
         </div>
         <div className="login_content reusable-content">
           <h2 className="title">Đăng nhập hệ thống</h2>
-          <form action="">
-            <label htmlFor=""></label>
-            <input type="email" />
-            <label htmlFor=""></label>
-            <input type="password" />
-          </form>
+
           <Form className="login-form reusable-form">
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Địa chỉ email</Form.Label>
-              <Form.Control type="email" placeholder="Nhập địa chỉ email" />
+              <Form.Label>
+                Địa chỉ email <span>*</span>
+              </Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Nhập địa chỉ email"
+                required
+              />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Mật khẩu</Form.Label>
-              <Form.Control type="password" placeholder="***********" />
+              <Form.Label>
+                Mật khẩu <span>*</span>
+              </Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="***********"
+                required
+              />
             </Form.Group>
             <Button variant="primary" type="submit" className="reusable-btn">
               Đăng nhập
@@ -41,8 +48,8 @@ const Login = () => {
           </Form>
           <p>
             <span>Bạn chưa có tài khoản? </span>
-            <Link to={'/'}> Đăng ký</Link>
-            <Link to={'/'}> Quên mật khẩu</Link>
+            <Link to={'/register'}> Đăng ký</Link>
+            <Link to={'/forgot-password'}> Quên mật khẩu</Link>
           </p>
         </div>
       </div>

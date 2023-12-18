@@ -6,6 +6,7 @@
   border-radius: 15px;
   margin: 4rem auto;
 
+  box-shadow: 5px 5px 2px rgb(238, 238, 238);
   .reusable-image {
     width: 50%;
     img {
@@ -21,8 +22,8 @@
     h2 {
       text-align: center;
     }
-    .reusable-form {
-      margin-top: -1.5rem;
+    .reusable-form span {
+      color: red;
     }
     span {
       font-size: 13px;
@@ -33,7 +34,7 @@
 .reusable-btn {
   width: 100%;
   height: 45px;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
 }
 
@@ -52,4 +53,9 @@
 
 .direction-icon:hover {
   background-color: #ccc;
+}
+
+.fa-arrow-left {
+  color: #000;
+  text-decoration: none;
 }
