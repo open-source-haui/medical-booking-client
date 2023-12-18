@@ -2,15 +2,15 @@ import React from 'react';
 import fake from '../../assets/images/quoted.png';
 import '../../assets/sass/component/_doctoritem.scss';
 
-const DoctorItem = () => {
+const DoctorItem = ({ item }) => {
   return (
-    <div className="doctor__item">
+    <div className="doctor__item" key={item.id}>
       <div className="doctor__item-content">
         <div className="doctor__item-image">
           <img src={fake} alt="" />
         </div>
-        <h2 className="doctor__item-name">Bùi Huy Hai</h2>
-        <p className="doctor__item-degree">Trinh do dai hoc</p>
+        <h2 className="doctor__item-name">{item.name}</h2>
+        <p className="doctor__item-degree">{item.degree}</p>
         <p className="doctor__item-experience">10 nam kinh nghiem</p>
       </div>
 

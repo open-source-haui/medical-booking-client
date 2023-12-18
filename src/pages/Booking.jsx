@@ -8,7 +8,31 @@ import DoctorItem from '../components/booking/DoctorItem';
 
 import '../assets/sass/component/_booking.scss';
 
+const doctors = [
+  {
+    id: 1,
+    name: 'Huy Hai',
+    image: 'nsbsakb',
+    degree: 'thac si',
+    experiance: '1 nam',
+  },
+  {
+    id: 2,
+    name: 'Huy Hai',
+    image: 'nsbsakb',
+    degree: 'thac si',
+    experiance: '1 nam',
+  },
+  {
+    id: 3,
+    name: 'Huy Hai',
+    image: 'nsbsakb',
+    degree: 'thac si',
+    experiance: '1 nam',
+  },
+];
 const Booking = () => {
+  
   return (
     <div>
       <HeaderClient />
@@ -37,26 +61,9 @@ const Booking = () => {
         <p className="booking-des">Chọn một bác sĩ bạn muốn khám</p>
 
         <div className="doctor__container">
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
+          {doctors && doctors.length > 0
+            ? doctors.map((doctor) => <DoctorItem item={doctor} />)
+            : ''}
         </div>
       </section>
       <div className="booking__question">
