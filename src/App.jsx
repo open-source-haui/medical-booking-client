@@ -5,6 +5,9 @@ import Booking from './pages/Booking';
 import Contact from './pages/Contact';
 import Profile from './pages/Profile';
 import DoctorDetail from './pages/DoctorDetail';
+import Appointment from './pages/Appointment';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 import './assets/sass/base.scss';
 
@@ -15,7 +18,10 @@ function App() {
       <Route path="/booking" element={<Booking />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/profile" element={<DoctorDetail />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/appointment" element={<Appointment />} />
+      <Route path="/doctor" element={<DoctorDetail />} />
     </Routes>
   );
 }
