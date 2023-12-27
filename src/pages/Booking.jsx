@@ -1,14 +1,48 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import FooterClient from '../layouts/client/Footer';
 import HeaderClient from '../layouts/client/Header';
 import Accordion from 'react-bootstrap/Accordion';
 import banner from '../assets/images/booking-banner.webp';
 import DoctorItem from '../components/booking/DoctorItem';
+import { BASE_URL } from '../common/baseUrl';
+import { GET_DOCTORS } from '../api/doctors/getDoctors.api';
 
 import '../assets/sass/component/_booking.scss';
-
+import { loadState, saveState } from '../utils/localStorage';
+const accessToken = 'access_token';
 const Booking = () => {
+  const [doctors, setDoctors] = useState([]);
+  const [metadata, setMetadata] = useState(null);
+
+  const getDoctors = async () => {
+    try {
+      const result = await axios.get(`${BASE_URL}${GET_DOCTORS()}`);
+      const { data } = result;
+      if (data?.code >= 200 && data?.code < 300) {
+        setDoctors(data?.data?.results);
+        setMetadata({
+          limit: data?.data?.limit,
+          page: data?.data?.page,
+          totalPages: data?.data?.totalPages,
+          totalResults: data?.data?.totalResults,
+        });
+      } else {
+        alert(data?.message || 'INTERNAL SERVER ERROR');
+      }
+      return result;
+    } catch (err) {
+      console.error(err);
+      alert(err?.message);
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    getDoctors();
+  }, []);
+
   return (
     <div>
       <HeaderClient />
@@ -24,7 +58,7 @@ const Booking = () => {
               placeholder="Tên bác sĩ muốn đặt..."
               name="search"
             />
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
           </div>
         </div>
 
@@ -37,26 +71,11 @@ const Booking = () => {
         <p className="booking-des">Chọn một bác sĩ bạn muốn khám</p>
 
         <div className="doctor__container">
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
-          <DoctorItem></DoctorItem>
+          {Array.isArray(doctors) && doctors.length > 0
+            ? doctors.map((doctor) => (
+                <DoctorItem item={doctor} id={doctor?.id} />
+              ))
+            : ''}
         </div>
       </section>
       <div className="booking__question">

@@ -1,41 +1,61 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import * as Yup from 'yup';
+import { ErrorMessage, Field, Formik } from 'formik';
+
+// import
+
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+
+import '../assets/sass/component/_auth.scss';
+import login from '../assets/images/login.png';
 
 const Login = () => {
   return (
-    <div className="login">
-      <div className="login_image">
-        <img src="../assets/images/login-register.png" alt="" />
+    <div>
+      <div className="direction-icon">
+        <i class="fa-solid fa-arrow-left"></i>
       </div>
-      <div className="login_content">
-        <h1 className="title">Đăng nhập hệ thống</h1>
-        <form action="">
-          <label htmlFor=""></label>
-          <input type="email" />
-          <label htmlFor=""></label>
-          <input type="password" />
-        </form>
-        <Form>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Địa chỉ email</Form.Label>
-            <Form.Control type="email" placeholder="Nhập địa chỉ email" />
-          </Form.Group>
+      <div className="login reusable-auth">
+        <div className="reusable-image">
+          <img src={login} alt="" />
+        </div>
+        <div className="login_content reusable-content">
+          <h2 className="title">Đăng nhập hệ thống</h2>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Mật khẩu</Form.Label>
-            <Form.Control type="password" placeholder="***********" />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Đăng nhập
-          </Button>
-        </Form>
-        <span>
-          Bạn chưa có tài khoản
-          <Link to={'/signup'}> Đăng ký</Link>
-          <Link to={'/'}> Quên mật khẩu</Link>
-        </span>
+          <Form className="login-form reusable-form">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>
+                Địa chỉ email <span>*</span>
+              </Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Nhập địa chỉ email"
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>
+                Mật khẩu <span>*</span>
+              </Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="***********"
+                required
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit" className="reusable-btn">
+              Đăng nhập
+            </Button>
+          </Form>
+          <p>
+            <span>Bạn chưa có tài khoản? </span>
+            <Link to={'/register'}> Đăng ký</Link>
+            <Link to={'/forgot-password'}> Quên mật khẩu</Link>
+          </p>
+        </div>
       </div>
     </div>
   );
