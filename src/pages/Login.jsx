@@ -11,7 +11,31 @@ import Form from 'react-bootstrap/Form';
 import '../assets/sass/component/_auth.scss';
 import login from '../assets/images/login.png';
 
+import { BASE_URL } from '../common/baseUrl';
+import { LOGIN_API } from '../api/doctors/login.api';
+import { loadState } from '../utils/localStorage';
+
 const Login = () => {
+  const onSubmit = () => async (userData) => {
+    try {
+      const response = await axios.post(`${BASE_URL}${LOGIN_API}`, userData, {
+        headers: {
+          Authorization: `Bearer ${loadState('accessToken')}`,
+        },
+      });
+      console.log(response.data.code);
+      if (response.data.code === 401) {
+        alert('User does not exist!!');
+      } else {
+        const accessToken = response.data.accessToken;
+        localStorage.setItem('accessToken', accessToken);
+        alert('Logged in successfully 🙌');
+        navigate('/reactjs-class-hitclub/');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div>
       <div className="direction-icon">
