@@ -11,8 +11,8 @@ const HeaderClient = () => {
   const navigate = useNavigate();
   const accessToken = localStorage.getItem('access_token');
 
-  const handleSignIn = () => {
-    navigate('/signin');
+  const handleRouter = (link) => {
+    navigate(`${link}`);
   };
 
   const handleLogin = () => {
@@ -32,12 +32,21 @@ const HeaderClient = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">Trang chủ</Nav.Link>
-              <Nav.Link href="#home">Đặt lịch</Nav.Link>
-              <Nav.Link href="#home">Lịch hẹn</Nav.Link>
-              <Nav.Link href="#home">Liên hệ</Nav.Link>
+              <Nav.Link onClick={() => handleRouter('/')}>Trang chủ</Nav.Link>
+              <Nav.Link onClick={() => handleRouter('/booking')}>
+                Đặt lịch
+              </Nav.Link>
+              <Nav.Link onClick={() => handleRouter('/appointment')}>
+                Lịch hẹn
+              </Nav.Link>
+              <Nav.Link onClick={() => handleRouter('/contact')}>
+                Liên hệ
+              </Nav.Link>
               <NavDropdown title="Trịnh Thu Hà" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
+                <NavDropdown.Item
+                  onClick={() => handleRouter('/profile')}
+                  href="#action/3.1"
+                >
                   Tài khoản
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">

@@ -1,39 +1,50 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 import FooterClient from '../layouts/client/Footer';
 import HeaderClient from '../layouts/client/Header';
 
+import { BASE_URL } from '../common/baseUrl';
+import { GET_PROFILE } from '../api/doctors/getProfile.api';
+
 import '../assets/sass/component/_profile.scss';
 
 import user from '../assets/images/profile_user.jpg';
 
 const Profile = () => {
+  const [profile, setProfile] = useState();
+
+  const getProfile = async () => {
+    try {
+      const result = await axios.get(`${BASE_URL}${GET_PROFILE}`);
+      const { data } = result;
+      // if (data?.code >= 200 && data?.code < 300) {
+      //   setDoctors(data?.data?.results);
+      //   setMetadata({
+      //     limit: data?.data?.limit,
+      //     page: data?.data?.page,
+      //     totalPages: data?.data?.totalPages,
+      //     totalResults: data?.data?.totalResults,
+      //   });
+      // } else {
+      //   alert(data?.message || 'INTERNAL SERVER ERROR');
+      // }
+      return result;
+    } catch (err) {
+      console.error(err);
+      alert(err?.message);
+      return null;
+    }
+  };
+
+  useEffect(() => {
+    getProfile();
+  });
   return (
     <div id="profile">
       <HeaderClient />
-
-      {/* <div className="profile__container">
-        <div className="profile__info">
-          <div className="profile__info-left">
-            <img src={user} alt="" />
-          </div>
-          <div className="profile__info-right">
-            <h3>
-              trinh thu ha-<span>user</span>
-            </h3>
-            <p>
-              ID: <span>2370164107391247</span>
-            </p>
-          </div>
-        </div>
-
-        <div className="profile__detail">
-          <h4 className="profile__detail-title">Thông tin cơ bản</h4>
-        </div>
-      </div> */}
       <div className="profile__main">
         <div className="profile__container_update">
           <h2>Thông tin cá nhân</h2>

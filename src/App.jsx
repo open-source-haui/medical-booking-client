@@ -23,7 +23,7 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/appointment" element={<Appointment />} />
-      <Route path="/doctor" element={<DoctorDetail />} />
+      <Route path="/doctors/:doctorId" element={<DoctorDetail />} />
     </Routes>
   );
 }

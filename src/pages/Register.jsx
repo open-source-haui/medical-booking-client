@@ -7,7 +7,31 @@ import Form from 'react-bootstrap/Form';
 import '../assets/sass/component/_auth.scss';
 import login from '../assets/images/login.png';
 
+import { BASE_URL } from '../common/baseUrl';
+import { REGISTER } from '../api/doctors/register.api';
+import { loadState } from '../utils/localStorage';
+
 const Register = () => {
+  const submit = () => async (userData) => {
+    try {
+      const response = await axios.post(`${BASE_URL}${REGISTER}`, userData, {
+        headers: {
+          Authorization: `Bearer ${loadState('accessToken')}`,
+        },
+      });
+      console.log(response.data.code);
+      if (response.data.code === 401) {
+        alert('User does not exist!!');
+      } else {
+        const accessToken = response.data.accessToken;
+        localStorage.setItem('accessToken', accessToken);
+        alert('Logged in successfully 🙌');
+        navigate('/reactjs-class-hitclub/');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div>
       <Link to={'/'} className="direction-icon">
